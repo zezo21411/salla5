@@ -7,8 +7,280 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    {% component home %}
+	{# {% component home %} #}
+	<div class="container-fluid" id="">
+		<div class="firstContent">
+			<div class="homeImageContainer">
+				<img src="{{asset("/images/p2.png")}}" class="">
+			</div>
+
+			<div class="firstText row">
+				<p class="col">
+					خصومات حتي
+					<span class="mr-5">
+						<strong>
+							20 %
+						</strong>
+					</span>
+				</p>
+
+			</div>
+			<div class="secondText row">
+				<p class="col">
+					خليكي بالبيت
+					<span class="mr-5">
+						<strong>تسوقي معنا الان
+						</strong>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="categories mt-3 mb-3">
+			<h4 class="row mr-2">الاقسام</h4>
+			<nav class="nav subCategories mb-5">
+				<a class="nav-link active checked" href="#">عطور</a>
+				<a class="nav-link unChecked" href="#">مكياج</a>
+				<a class="nav-link unChecked" href="#">كريم</a>
+			</nav>
+
+			<div class="responsive">
+				<div>
+					<a href="{{url("/perfum")}}" style="text-decoration:none; color:black">
+						<div class="card" style="">
+							<img src="{{asset("/images/per1.jpg")}}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+								<div class="rating_and_discount row">
+									<div class="discount ">24%-</div>
+									<div class="rating mr-5">
+										<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
+								</div>
+
+								{# <a href="#" class="btn btn-primary">Go somewhere</a> #}
+							</div>
+
+							<div class="row card-bottom">
+								<p class="first">250 ر.س
+									<span class="middle mr-2">250 ر.س</span>
+								</p>
+
+								<div class="cartHome">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+
+							</div>
+
+							<div class="container topBadge" style="">
+								<div class="row" style="justify-content: space-evenly" id="newInfo">
+									<div class="newBadge ml-5 ">جديد</div>
+									<div class="favourite mr-5">
+										<i class="fa-regular fa-heart"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div>
+					<div class="card" style="">
+						<img src="{{asset("/images/per2.jpg")}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+							<div class="rating_and_discount row">
+								<div class="discount ">24%-</div>
+								<div class="rating mr-5">
+									<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
+							</div>
+
+							{# <a href="#" class="btn btn-primary">Go somewhere</a> #}
+						</div>
+						<div class="">
+							<div class="row card-bottom">
+								<p class="first">250 ر.س
+									<span class="middle mr-2">250 ر.س</span>
+								</p>
+								{# <p class="middle">250 ر.س</p> #}
+								<div class="cartHome">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="container topBadge" style="">
+							<div class="row" style="justify-content: space-evenly" id="newInfo">
+								<div class="newBadge ml-5 ">جديد</div>
+								<div class="favourite mr-5">
+									<i class="fa-regular fa-heart"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="card" style="">
+						<img src="{{asset("/images/per1.jpg")}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+							<div class="rating_and_discount row">
+								<div class="discount ">24%-</div>
+								<div class="rating mr-5">
+									<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
+							</div>
+
+							{# <a href="#" class="btn btn-primary">Go somewhere</a> #}
+						</div>
+						<div class="">
+							<div class="row card-bottom">
+								<p class="first">250 ر.س
+									<span class="middle mr-2">250 ر.س</span>
+								</p>
+								{# <p class="middle">250 ر.س</p> #}
+								<div class="cartHome">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+
+							</div>
+						</div>
+						<div class="container topBadge" style="">
+							<div class="row" style="justify-content: space-evenly" id="newInfo">
+								<div class="newBadge ml-5 ">جديد</div>
+								<div class="favourite mr-5">
+									<i class="fa-regular fa-heart"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="card" style="">
+						<img src="{{asset("/images/per2.jpg")}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+							<div class="rating_and_discount row">
+								<div class="discount ">24%-</div>
+								<div class="rating mr-5">
+									<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
+							</div>
+
+							{# <a href="#" class="btn btn-primary">Go somewhere</a> #}
+						</div>
+						<div class="">
+							<div class="row card-bottom">
+								<p class="first">250 ر.س
+									<span class="middle mr-2">250 ر.س</span>
+								</p>
+								{# <p class="middle">250 ر.س</p> #}
+								<div class="cartHome">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+
+							</div>
+						</div>
+						<div class="container topBadge" style="">
+							<div class="row" style="justify-content: space-evenly" id="newInfo">
+								<div class="newBadge ml-5 ">جديد</div>
+								<div class="favourite mr-5">
+									<i class="fa-regular fa-heart"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="card" style="">
+						<img src="{{asset("/images/per1.jpg")}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+							<div class="rating_and_discount row">
+								<div class="discount ">24%-</div>
+								<div class="rating mr-5">
+									<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
+							</div>
+
+							{# <a href="#" class="btn btn-primary">Go somewhere</a> #}
+						</div>
+						<div class="">
+							<div class="row card-bottom">
+								<p class="first">250 ر.س
+									<span class="middle mr-2">250 ر.س</span>
+								</p>
+								{# <p class="middle">250 ر.س</p> #}
+								<div class="cartHome">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+
+							</div>
+						</div>
+						<div class="container topBadge" style="">
+							<div class="row" style="justify-content: space-evenly" id="newInfo">
+								<div class="newBadge ml-5 ">جديد</div>
+								<div class="favourite mr-5">
+									<i class="fa-regular fa-heart"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>your content6</div>
+				<div>your content7</div>
+				<div>your content8</div>
+				<div>your content9</div>
+				<div>your content10</div>
+
+			</div>
+		</div>
+		<div class="row images">
+			<img class="ml-2 mr-2 mt-2" src="{{asset("/images/makeuo.webp")}}">
+			<img class="ml-2 mr-2 mt-2" src="{{asset("/images/makeup3.webp")}}">
+		</div>
+
+		<div class="row" style="justify-content: center;">
+			<img src="{{asset("/images/offers3.jpg")}}" style="height: 500px;" id="specialOrder">
+		</div>
+	</div>
 {% endblock %}
 {% block scripts %}
-    <script defer src="{{ 'home.js' | asset }}"></script>
+	<script defer src="{{ 'home.js' | asset }}"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+$('.responsive').slick({
+dots: true,
+arrow: false,
+infinite: false,
+speed: 300,
+slidesToShow: 5,
+slidesToScroll: 5,
+rtl: true,
+autoplay: false,
+responsive: [
+{
+breakpoint: 1024,
+settings: {
+slidesToShow: 3,
+slidesToScroll: 3,
+infinite: true,
+dots: true
+}
+}, {
+breakpoint: 600,
+settings: {
+slidesToShow: 2,
+slidesToScroll: 2
+}
+}, {
+breakpoint: 375,
+settings: {
+slidesToShow: 4,
+slidesToScroll: 4
+}
+}
+// You can unslick at a given breakpoint now by adding:
+// settings: "unslick"
+// instead of a settings object
+]
+});
+});
+	</script>
 {% endblock %}

@@ -5,83 +5,129 @@
 | cart.items_count | int     |                                 |
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
-<header class="store-header">
-    {# Top Nav #}
-    <div class="top-navbar">
-        <div class="container flex justify-between">
-            <div class="flex-1 flex items-center rtl:space-x-reverse space-x-2">
-              {# Footer Menu #}
-              {% component 'footer.menu' with {is_header:true} %}
+<header
+	class="store-header">
+	{# Top Nav #}
+	
+	{# Main Nav #}
+	<div
+		id="mainnav" class="main-nav-container shadow-default bg-white header">
+		<div class="row" style="">
+			<div class="logo col-6">
+				<div class="row">
+					<p style="margin-left:10px" id="modal" class="">
+						<img src="{{asset("/images/3.png")}}">
+					</p>
 
-                <div class="header-buttons">
-                    {# Language & Currency Component #}
-                    {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-                        <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray basis-0">
-                            <span class="flag iti__flag iti__{{ user.language.country_code }} rounded-sm"></span>
-                            <span class="mx-1.5">|</span> <span>{{ currency.symbol }}</span>
-                        </button>
-                        <salla-localization-modal></salla-localization-modal>
-                    {% endif %}
-                </div>
+					<a href=""><img src="{{asset("/images/logo.png")}}"></a>
+					<div class="headerContent col-6">
+						<a href="" class="mr-4">تسجيل الدخول</a>
+						<a href="" class="mr-4">حسابي</a>
+						<a href="" class="mr-4">قائمة الامنيات</a>
+					</div>
+				</div>
 
-                {# Scopes | Branches #}
-                {% if store.scope %}
-                    <button class="btn--rounded-gray"
-                            onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
-                        <i class="sicon-location rtl:ml-1 ltr:mr-1"></i> {{ store.scope.name }}
-                    </button>
-                {% endif %}
+			</div>
+			<div class="search col-5">
+				<div class=" row">
+					<div class="icon">
+						<i class="fas fa-magnifying-glass"></i>
+					</div>
+					<input class="form-control col-6" placeholder="ابحث عن المنتجات">
+				</div>
+				{# <salla-search inline oval height="36"></salla-search> #}
+			</div>
+			<div class="">
+				<a href="{{url("/cart")}}" style="text-decoration:none">
+					<div
+						class="shopping-cart-icon">
+						{# <img src="{{asset("/images/shopping-cart.png")}}" class="shopping-cart"> #}
+						<i class="fa-solid fa-cart-shopping shopping-cart"></i>
+						<span class="button__badge">4</span>
 
-                {# Search Component #}
-                {# <button onclick="salla.event.dispatch('search::open')" class="btn--circle-gray search-btn">
-                <span class="sicon-search"></span>
-                <span class="sm:hidden px-2 opacity-50">{{ trans('blocks.header.searchProducts') }}</span>
-              </button> #}
-              <div class="header-search flex-1">
-                <salla-search inline oval height="36"></salla-search>
-              </div>
-            </div>
+					</div>
+				</a>
 
-            {% component 'footer.contacts' with {is_header:true} %}
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
+	<div class="modalToggle">
+		<div class="row drawer">
+			<div class="col drawerLinks">
+				<a href="" class="mb-3">الرئيسية</a>
+				<a href="" class="mb-3">الاقسام</a>
+				<a href="" class="mb-3">السلة</a>
+				<a href="" class="mb-3">قائمة الامنيات</a>
+				<a href="" class="mb-3">حسابي</a>
+				<a href="" class="mb-3">تسجيل الدخول</a>
+			</div>
+			<div
+				class="col largeImage">{# <img src="{{asset("/images/largeLogo.png")}}" > #}
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid headerResponsive mt-2 mb-2">
+		<div class="row" style="justify-content:space-between;    align-items: end;">
+			<div>
+				<p style="margin-left:10px" id="modalResponsive" class="">
+					<img src="{{asset("/images/3.png")}}">
+				</p>
+			</div>
+			<div style="display:flex; align-items: center;">
+				<a href="{{url("/")}}"><img src="{{asset("/images/logo.png")}}"></a>
+				<a href="{{url("/cart")}}" style="text-decoration:none; color:black">
 
-    {# Main Nav #}
-    <div id="mainnav" class="main-nav-container shadow-default bg-white">
-        <div class="inner bg-inherit">
-            <div class="container">
-                <div class="flex items-stretch justify-between relative">
-                    <div class="flex items-center">
-                        <a class="lg:hidden mburger mburger--collapse leading-none" href="#mobile-menu">
-                            <i class="sicon-menu text-primary text-2xl rtl:ml-2.5 ltr:mr-2.5"></i>
-                        </a>
-                        <a class="navbar-brand" href="{{ store.url }}">
-                            <img fetchpriority="high" width="100%" height="100%" loading="eager" src="{{ store.logo }}" alt="{{ store.name }}">
-                            {% if is_page('index') %}
-                              <h1 class="sr-only">{{ store.name }}</h1>
-                            {% else %}
-                              <h2 class="sr-only">{{ store.name }}</h2>
-                            {% endif %}
-                        </a>
-                        {% component 'header.menu' %}
-                    </div>
-                    <div class="flex items-center justify-end">
-                        {% if user.type=='user' %}
-                          <salla-user-menu avatar-only show-header></salla-user-menu>
-                        {% else %}
-                            <button class="header-btn" onclick="salla.event.dispatch('login::open')">
-                              <i class="header-btn__icon sicon-user-circle"></i>
-                            </button>
-                        {% endif %}
-                        <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
-                          <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>
-                        </salla-cart-summary>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<div
+						class="shopping-cart-icon mr-3">
+						{# <img src="{{asset("/images/shopping-cart.png")}}" class="shopping-cart"> #}
+						<i class="fa-solid fa-cart-shopping shopping-cart"></i>
+						<span class="button__badge">4</span>
+
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="modalToggleResponsive">
+		<div class="drawerResponsive">
+			<div>
+				<i class="fa-regular fa-circle-xmark mr-5"></i>
+			</div>
+			<div class="drawerLinksResponsive">
+				<a href="" class="mb-3">الرئيسية</a>
+				<a href="" class="mb-3">الاقسام</a>
+				<a href="" class="mb-3">ابحث عن المنتجات</a>
+				<a href="" class="mb-3">قائمة الامنيات</a>
+				<a href="" class="mb-3">السلة</a>
+				<a href="" class="mb-3">حسابي</a>
+				<a href="" class="mb-3">تسجيل الدخول</a>
+			</div>
+			<div class="smallImage">
+				<img src="{{asset("/images/smallImage.PNG")}}">
+			</div>
+		</div>
+	</div>
 </header>
+<script>
+	$(document).ready(function () {
+var width = $(window).width();
+if ((width <= 550)) {
+$("#modalResponsive").click(function () {
+$('.modalToggleResponsive').toggle();
+});
+} else {
+$("#modal").click(function () {
+$('.modalToggle').toggle();
+});
+}
+$(".drawerResponsive i").on("click", function () {
+$(".modalToggleResponsive").toggle();
+
+});
+
+
+});
+</script>
 {% if store.scope %}
-    <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
+	<salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
