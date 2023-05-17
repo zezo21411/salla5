@@ -8,27 +8,79 @@
 | limit           | Int        | Number of products to be shown
 #}
 {% set is_vertical = theme.settings.get('vertical_fixed_products', true) %}
-<section class="s-block container">
-    {% if title %}
-      <div class="s-block__title">
-        <div class="right-side">
-          <h2>{{ title }}</h2>
-          {# <p>عنوان فرعي توصيفي صغير</p> #}
-        </div>
-        {% if display_all_url %}
-            <a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }} <i class="sicon-arrow-left"></i></a>
-        {% endif %}
-      </div>
-    {% endif %}
+<section class="s-block container ">
+	{% if title %}
+		<div class="s-block__title">
+			<div class="right-side">
+				<h2>{{ title }}</h2>
+				{# <p>عنوان فرعي توصيفي صغير</p> #}
+			</div>
+			{% if display_all_url %}
+				<a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }}
+					<i class="sicon-arrow-left"></i>
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
 
-    <salla-products-list
-      source="selected"
-      limit="{{ limit }}"
-      source-value="[{{ products|map((product) => product.id)|join(',') }}]"
-      class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
-      {{is_vertical ? '' : 'horizontal-cards'}}
-      >
-    </salla-products-list>
+	{# <salla-products-list
+	      source="selected"
+	      limit="{{ limit }}"
+	      source-value="[{{ products|map((product) => product.id)|join(',') }}]"
+	      class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
+	      {{is_vertical ? '' : 'horizontal-cards'}}
+	      >
+	    </salla-products-list> #}
+      		<div class="responsive">
+
+	{% for product in products %}
+   
+		<div>aya</div>
+		
+	
+	{% endfor %}
+  	</div>
 </section>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+<script type="text/javascript">
+		$(document).ready(function () {
+$('.responsive').slick({
+dots: true,
+arrow: false,
+infinite: false,
+speed: 300,
+slidesToShow: 3,
+slidesToScroll: 3,
+rtl: true,
+autoplay: false,
+responsive: [
+{
+breakpoint: 1024,
+settings: {
+slidesToShow: 3,
+slidesToScroll: 3,
+infinite: true,
+dots: true
+}
+}, {
+breakpoint: 600,
+settings: {
+slidesToShow: 2,
+slidesToScroll: 2
+}
+}, {
+breakpoint: 375,
+settings: {
+slidesToShow: 4,
+slidesToScroll: 4
+}
+}
+// You can unslick at a given breakpoint now by adding:
+// settings: "unslick"
+// instead of a settings object
+]
+});
 
+});
+	</script>

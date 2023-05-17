@@ -6,6 +6,7 @@ window.fslightbox = Lightbox;
 class Home extends BasePage {
     onReady() {
         this.initFeaturedTabs();
+       
     }
 
     /**
