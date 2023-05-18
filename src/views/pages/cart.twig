@@ -72,10 +72,10 @@
 		<h1 class="sr-only">{{ trans('blocks.header.cart') }}</h1>
 		<div class="flex flex-col  lg:flex-row pb-6 lg:pb-20">
 			<div class="main-content flex-1 w-full">
-				{# {% hook 'cart:items.start' %} #}
+				{% hook 'cart:items.start' %}
 				<table class="table " style="">
 					<thead>
-						<tr>
+						<tr class="cart-item bg-white p-5 xs:p-7 rounded-md mb-5">
 							<th scope="col" class="">الصنف</th>
 							<th scope="col" class="col-3"></th>
 							<th scope="col" class="col-3 ">الكمية</th>
@@ -83,21 +83,50 @@
 							<th scope="col">المجموع</th>
 							<th scope="col"></th>
 						</tr>
-					</thead> 
+					</thead>
 					{% for item in cart.items %}
 						<tr>
-						
+							<th scope="row">
+								<div class="productImage">
+									<a href="{{ item.url }}" class="shrink-0">
+										<img src="{{ 'images/s-empty.png' | asset }}" data-src="{{ item.product_image }}" alt="{{ item.product_name }}" class="lazy flex-none w-24 h-20 border border-gray-200 bg-gray-100 rounded-md object-center object-cover">
+									</a>
+								</div>
+							</th>
+							<td>
+								<a href="{{ item.url }}" class="text-base">{{ item.product_name }}</a>
+							</td>
+							<td>
+								<form onchange="salla.form.onChange('cart.updateItem', event)" id="item-{{ item.id }}">
+									<input type="hidden" name="id" value="{{ item.id }}">
 
-						{# {% else %}
-							<div class="no-content-placeholder">
-								<i class="sicon-shopping-bag icon"></i>
-								<p>{{ trans('pages.cart.empty_cart') }}</p>
-								<a href="{{ link('/') }}" class="btn btn--outline-primary btn--rounded-full">{{ trans('common.elements.back_home') }}</a>
-							</div> #}
+									{% if item.type == 'donating' %}
+										<span></span>
+									{% elseif item.is_hidden_quantity %}
+										<input type="hidden" value="{{ item.quantity }}" name="quantity"/>
+										<span class="w-10 text-center">{{ item.quantity }}</span>
+									{% else %}
+										<salla-quantity-input cart-item-id="{{ item.id }}" max="{{ product.max_quantity }}" class="transtion transition-color duration-300" value="{{ item.quantity }}" name="quantity"></salla-quantity-input>
+									{% endif %}
+								</form>
+							</td>
+							<td class="priceList">{{ item.product_price|money }}</td>
+							<td class="priceList">{{ item.weight_label }}</td>
+							<td>
+								<salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.cart.deleteItem({{ item.id }}).then(() => document.querySelector('#item-{{ item.id }}').remove())">
+									<i class="sicon-cancel"></i>
+								</salla-button>
+							</td>
+							{# {% else %}
+																																																	<div class="no-content-placeholder">
+																																																		<i class="sicon-shopping-bag icon"></i>
+																																																		<p>{{ trans('pages.cart.empty_cart') }}</p>
+																																																		<a href="{{ link('/') }}" class="btn btn--outline-primary btn--rounded-full">{{ trans('common.elements.back_home') }}</a>
+																																																	</div> #}
 						</tr>
 					{% endfor %}
 				</table>
-				{# {% hook 'cart:items.end' %} #}
+				{% hook 'cart:items.end' %}
 				<div class="row cartFooter ">
 					{% hook 'cart:submit.start' %}
 					<salla-button onclick="salla.cart.submit()" loader-position="center" width="wide">
