@@ -7,8 +7,44 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    {% component home %}
+	<div class="container-fluid" id="">
+		<div class="firstContent">
+			<div class="homeImageContainer">
+				<img src="{{asset("/images/p2.png")}}" class="">
+			</div>
+
+			<div class="firstText row">
+				<p class="col">
+					خصومات حتي
+					<span class="mr-5">
+						<strong>
+							20 %
+						</strong>
+					</span>
+				</p>
+
+			</div>
+			<div class="secondText row">
+				<p class="col">
+					خليكي بالبيت
+					<span class="mr-5">
+						<strong>تسوقي معنا الان
+						</strong>
+					</span>
+				</p>
+			</div>
+		</div>
+		{% component home %}
+		{# <div class="row images">
+			<img class="ml-2 mr-2 mt-2" src="{{asset("/images/makeuo.webp")}}">
+			<img class="ml-2 mr-2 mt-2" src="{{asset("/images/makeup3.webp")}}">
+		</div> #}
+
+		{# <div class="row" style="justify-content: center;">
+			<img src="{{asset("/images/offers3.jpg")}}" style="height: 500px;" id="specialOrder">
+		</div> #}
+	</div>
 {% endblock %}
 {% block scripts %}
-    <script defer src="{{ 'home.js' | asset }}"></script>
+	<script defer src="{{ 'home.js' | asset }}"></script>
 {% endblock %}
