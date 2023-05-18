@@ -337,6 +337,311 @@ input {
   width: 50%;
   height: 432px;
 }
+.perfumPrice {
+    color: #f282a9;
+    font-size: 22px;
+    font-weight: bold;
+}
+.perfumDiscount {
+    color: #f282a9;
+    font-size: 22px;
+    text-decoration: line-through;
+    opacity: 45%;
+}
+.nav-tabs a {
+    font-size: 19px;
+    color: #292929;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-tabs li .active {
+    color: #919191;
+    border-bottom: 1px #f282a9 solid;
+    padding: 4px;
+    font-weight: bold;
+}
+.infoData {
+    font-size: 16px;
+    color: #707070;
+}
+#perfumContainer {
+    text-align: right;
+}
+.perfumaddToCart {
+    background-color: #f282a9;
+    color: white;
+    border-radius: 25px;
+}
+.perfumaddToFav {
+    color: #f282a9 !important;
+    border-radius: 25px !important;
+    border: 1px #f282a9 solid !important;
+}
+.addToFav:hover {
+    color: #f282a9;
+}
+.gallary img {
+    width: 80%;
+}
+
+.gallaryImage {
+    margin: 10px;
+    margin-right: 50px;
+    box-shadow: 0px 3px 6px #0000003c;
+    border-radius: 13px;
+    justify-content: center;
+    display: flex !important;
+    height: 91px !important;
+    width: 77px !important;
+}
+#counter-value {
+    border: none;
+    /* border-radius: 20px; */
+    /* width: 28%; */
+    font-weight: bold;
+}
+#counter-increment,
+#counter-decrement {
+    font-size: 28px;
+    color: #9fa3a7;
+    font-weight: bold;
+}
+.quantity-counter {
+    border: 2px solid #eeeeee;
+    border-radius: 20px;
+    /* width: 50%; */
+    display: flex;
+    width: 80px;
+height: 33px;
+justify-content: space-between;
+align-items: center;
+/* padding: 30px; */
+}
+#decrement,#increment{
+    cursor: pointer;
+}
+.reviweeImage img {
+    width: 80%;
+    /* border-radius: 50%; */
+}
+.comment {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+.reviewText {
+    color: #4c4c4c;
+    font-size: 18px;
+}
+.secondReviweeImage {
+    width: 10%;
+}
+.reviewForm textarea {
+    background-color: #f0f0f0;
+    border: none;
+}
+.send {
+    background-color: #f282a9;
+    color: white;
+    border-radius: 25px;
+    width: 152px;
+}
+.comments {
+    display: none;
+}
+.addCommentForm {
+    display: none;
+}
+.perfumImage{
+  width: 263px ;
+height: 354px ;
+}
+.perfumImage img{
+  width: 100%;
+}
+.s-button-primary{
+  background-color: #f282a9;
+  color: white;
+  border-radius: 25px;
+  border-color: #f282a9;
+}
+.s-button-primary:hover{
+  background-color: #f282a9;
+}
+.commentSend {
+  background-color: #f282a9 !important;
+  color: white !important;
+  border-radius: 25px !important;
+  width: 152px !important;
+}
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-container::before {
+  content: ""; /* Mandatory with ::before */
+  background-color: #e2dfdf;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+.circle {
+  background-color: #e2dfdf;
+  color: white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  background-color: #f282a9;
+}
+#cartFirstProgress {
+  text-align: right;
+}
+.progressText {
+  max-width: 100%;
+  width: 350px;
+  justify-content: space-between;
+  margin-right: 4px;
+  color: #9fa3a7;
+  font-size: 12px;
+}
+.progressText .active {
+  color: #292929;
+  font-size: 14px;
+  font-weight: bold;
+}
+#progressDiv {
+  width: 350px;
+  height: 50px;
+  margin: 0 auto;
+}
+.cartFooter {
+  justify-content: space-between;
+  align-items: center;
+}
+.cartFooter button {
+  width: 167px;
+  height: 48px;
+  background-color: #f282a9;
+  color: white;
+  font-size: 15px;
+  border-radius: 24px;
+  font-weight: bold;
+}
+.promoCode input {
+  border-radius: 23px;
+  background: #fafafa;
+  color: #9fa3a7;
+  font-size: 10px;
+  width: 213px;
+  height: 46px;
+}
+.promoCode {
+  position: relative;
+}
+.promoCode i {
+  position: absolute;
+  top: 15px;
+  right: 170px;
+}
+.cartFooter .discountValue {
+  font-size: 36px;
+  color: #919191;
+}
+.discountHeader {
+  font-size: 10px;
+  color: #9fa3a7;
+}
+.summation {
+  color: #050404;
+  font-size: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.total {
+  color: #050404;
+  font-size: 36px;
+  font-weight: bold;
+}
+.buyingList {
+  text-align: center;
+}
+.priceList {
+  font-size: 16px;
+  font-weight: bold;
+}
+.buyingList img {
+  width: 78px;
+  height: 92px;
+  padding: 5px;
+  box-shadow: 0px 3px 6px #0000003c;
+}
+.cartPaymentMethod {
+  justify-content: center;
+  font-size: 50px;
+}
+.cartPaymentMethod i {
+  padding-left: 10px;
+}
+.cartButtons {
+  flex-direction: column;
+  display: flex;
+  align-items: start;
+  position: relative;
+}
+.cartButtons button {
+  width: 175px;
+  height: 50px;
+  padding: 10px;
+  color: #888888;
+  border: 1px #707070 solid;
+  border-radius: 30px;
+  font-size: 14px;
+}
+.activeCard {
+  color: #e71c4c !important;
+  border: 1px #e71c4c solid;
+  box-shadow: 0px 0px 30px #00000024;
+}
+.cartArrow {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  color: #e71c4c;
+}
+.cartInformation input {
+  border: none;
+  background: #fafafa;
+  color: #262626;
+  font-weight: bold;
+  font-size: 14px;
+}
 @media only screen and (min-width: 375px) {
   .modalToggleResponsive {
     border-top: 3px solid #0a0a0a;
@@ -415,6 +720,84 @@ input {
         margin-left: 0px;
         margin-bottom: -5px;
     }
+    .perfumContainer {
+      flex-flow: column;
+  }
+  .image {
+      order: 1;
+  }
+  .info {
+      order: 2;
+  }
+  #cart-fav,
+  #quantityContainer {
+      display: none;
+  }
+  /* .image{
+      position: relative;
+  }
+  */
+  /* .responsiveDesign .buttons{
+      width: 154px;
+      height: 44px;
+  } */
+  .card-bottom {
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: -5px;
+  }
+  .first {
+      margin-left: 6px;
+  }
+  .gallary {
+      margin-right: -60px;
+  }
+  #reviews .infoData {
+      display: none;
+  }
+  .reviweeImage img {
+      width: 36px;
+      height: 39px;
+  }
+  .responsiveCard {
+      /* border: 1px #292929 solid; */
+      /* border-radius: 20px; */
+      box-shadow: 0px 8px 15px #e7eaf0;
+      border-radius: 7px;
+      width: 347px;
+      height: 110px;
+      margin-bottom: 50px;
+  }
+  .responsiveCard .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px #e7eaf0 solid;
+  }
+  .responsiveCard .cardFooter {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+  }
+.quantityResponsive {
+      justify-content: space-evenly;
+      align-items: center;
+      background: #f6f7f8;
+      border-radius: 4px;
+  }
+  .ProdImage {
+      width: 87px;
+      height: 87px;
+  }
+  .ProdImage img {
+      width: 100%;
+      height: 100%;
+  }
+  .increment,
+  .value,
+  .decrement {
+      font-size: 12px !important;
+  }
 }
 @media only screen and (min-width: 550px) {
   .header {
@@ -462,4 +845,50 @@ input {
     margin-left: 0px;
     margin-bottom: 0px;
 }
+ .perfumContainer {
+        flex-flow: row;
+    }
+    .image {
+        order: 2;
+    }
+    .info {
+        order: 1;
+    }
+    .responsiveDesign {
+        display: none;
+    }
+    #cart-fav,
+    #quantityContainer {
+        display: flex;
+    }
+    #reviews .infoData {
+        display: block;
+    }
+    .responsiveCard {
+        display: none;
+    }
+    .buyingList {
+        display: block;
+    }
+    .cartButtons {
+        display: block;
+    }
+    .responsiveCartButtons {
+        display: none;
+    }
+    .cartPaymentMethod {
+        justify-content: center;
+    }
+    .cartFooterResponsive {
+        display: none;
+    }
+    .cartFooter {
+        display: flex;
+    }
+    .card-bottom {
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
 }
+
