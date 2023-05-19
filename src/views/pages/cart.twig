@@ -70,10 +70,10 @@
 			</div>
 		</div>
 		<h1 class="sr-only">{{ trans('blocks.header.cart') }}</h1>
-		<div class="flex flex-col  lg:flex-row pb-6 lg:pb-20">
+		<div class="">
 			<div class="main-content flex-1 w-full">
 				{% hook 'cart:items.start' %}
-				<table class="table " style="">
+				<table class="table buyingList" style="">
 					<thead>
 						<tr class="cart-item bg-white p-5 xs:p-7 rounded-md mb-5">
 							<th scope="col" class="">الصنف</th>
@@ -111,135 +111,99 @@
 								</form>
 							</td>
 							<td class="priceList">{{ item.product_price|money }}</td>
-							<td class="priceList">{{ item.weight_label }}</td>
+							<td class="priceList">{{ item.quantity }}</td>
 							<td>
 								<salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.cart.deleteItem({{ item.id }}).then(() => document.querySelector('#item-{{ item.id }}').remove())">
 									<i class="sicon-cancel"></i>
 								</salla-button>
 							</td>
 							{# {% else %}
-																																																	<div class="no-content-placeholder">
-																																																		<i class="sicon-shopping-bag icon"></i>
-																																																		<p>{{ trans('pages.cart.empty_cart') }}</p>
-																																																		<a href="{{ link('/') }}" class="btn btn--outline-primary btn--rounded-full">{{ trans('common.elements.back_home') }}</a>
-																																																	</div> #}
+																																																																																				<div class="no-content-placeholder">
+																																																																																					<i class="sicon-shopping-bag icon"></i>
+																																																																																					<p>{{ trans('pages.cart.empty_cart') }}</p>
+																																																																																					<a href="{{ link('/') }}" class="btn btn--outline-primary btn--rounded-full">{{ trans('common.elements.back_home') }}</a>
+																																																																																				</div> #}
 						</tr>
 					{% endfor %}
 				</table>
+				{% for item in cart.items %}
+					<div class="responsiveCard">
+						<div class="row">
+							<div class="ProdImage col">
+								<a href="{{ item.url }}" class="shrink-0">
+									<img src="{{ 'images/s-empty.png' | asset }}" data-src="{{ item.product_image }}" alt="{{ item.product_name }}" class="lazy flex-none w-24 h-20 border border-gray-200 bg-gray-100 rounded-md object-center object-cover">
+								</a>
+							</div>
+							<div class="col-9">
+								<div class="cardHeader" style="">
+									<p>
+										{{ item.product_name }}</p>
+									{# <i class="fa-solid fa-circle-xmark"></i> #}
+									<salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.cart.deleteItem({{ item.id }}).then(() => document.querySelector('#item-{{ item.id }}').remove())">
+										<i class="sicon-cancel"></i>
+									</salla-button>
+								</div>
+								<div class="cardFooter row" style="">
+									<p>{{ item.product_price|money }}</p>
+									<div class="col mr-3 ml-2">
+										<salla-quantity-input cart-item-id="{{ item.id }}" max="{{ product.max_quantity }}" class="transtion transition-color duration-300" value="{{ item.quantity }}" name="quantity"></salla-quantity-input>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
 				{% hook 'cart:items.end' %}
 				<div class="row cartFooter ">
 					{% hook 'cart:submit.start' %}
-					<salla-button onclick="salla.cart.submit()" loader-position="center" width="wide">
+					<salla-button onclick="salla.cart.submit()" loader-position="center" width="">
 						{{ trans('pages.cart.complete_order') }}
 					</salla-button>
 					{% hook 'cart:submit.end' %}
-					<div class="promoCode row ml-3">
+					<div class="promoCode row mr-5">
 						<input class="form-control col " placeholder="برومو كود ">
 						<i class="fa-solid fa-check" style="color: #99ba00;"></i>
 					</div>
 
 					<div class="col" style="text-align: center;">
 						<p class="discountHeader">الخصم</p>
-						<p class="discountValue">0 RS</p>
+						<p class="discountValue">{{ cart.real_discount|money }}</p>
 					</div>
 					<p class="col summation">المجموع</p>
-					<p class="col total">250 ر.س</p>
+					<p class="col total">{{ cart.total|money }}</p>
+				</div>
+				<div class=" cartFooterResponsive ">
+					<div class="row promo_discount">
+						<div class="promoCode  ml-3 mr-3">
+							<input class="form-control col " placeholder="برومو كود ">
+							<i class="fa-solid fa-check" style="color: #99ba00;"></i>
+						</div>
+						<div class="col" style="text-align: center;">
+							<p class="discountHeader">الخصم</p>
+							<p class="discountValue">{{ cart.real_discount|money }}</p>
+						</div>
+					</div>
+					<div class="footerResponsive container">
+						<div class="row" style="justify-content:space-between ;padding:10px">
+							<p style="font-size:14px;">المجموع</p>
+							<p style="font-size:26px; font-weight:bold">{{ cart.total|money }}</p>
+						</div>
+						{% hook 'cart:submit.start' %}
+						<salla-button onclick="salla.cart.submit()" loader-position="center" width="">
+							{{ trans('pages.cart.complete_order') }}
+						</salla-button>
+						{% hook 'cart:submit.end' %}
+					</div>
 				</div>
 			</div>
 
 			{% hook 'cart:summary.start' %}
 
 			<!-- sidebar -->
-			{% if cart.items|length %}
-				<div class="sticky top-24 w-full lg:w-96 rtl:lg:mr-8 ltr:lg:ml-8">
-					<div class="shadow-default bg-white p-5 xs:p-7 rounded-md mb-5 relative {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
-						<div class="flex rtl:space-x-reverse space-x-3 items-center">
-							<i class="bg-primary text-white rounded-icon sicon-shipping-fast {{ theme.is_rtl ? 'flip-x':'' }}"></i>
-							{% set is_free=cart.free_shipping_bar.has_free_shipping %}
-							<div class="flex-1">
-								<h4 class="shipping-item font-bold text-sm mb-1.5">{{ trans('pages.cart.free_shipping') }}</h4>
-								<p class="shipping-item text-sm font- text-gray-400">
-									<span id="free-shipping-msg">{{ (is_free
-                                            ?trans('pages.cart.has_free_shipping')
-                                            :trans('pages.cart.free_shipping_alert', {'amount': cart.free_shipping_bar.remaining|money}))
-                                            | raw }}</span>
-									<span class="emoji {{ is_free?'':'hidden' }}" id="free-shipping-applied">🎉</span>
-								</p>
-							</div>
-						</div>
-						<div class="mt-8 bg-border-color rounded-full {{ is_free ? ' hidden' : '' }}" id="free-shipping-bar">
-							<div class="progress-bg transition-all duration-500 h-2.5 bg-primary relative rounded-full flex justify-end" style="width:{{ cart.free_shipping_bar.percent }}%">
-								<i class="inline-block sicon-shipping-fast absolute -top-5 rtl:left-0 ltr:right-0 {{ theme.is_rtl ? 'flip-x':'' }}"></i>
-							</div>
-						</div>
-					</div>
-					{% if loyalty and user.loyalty_points %}
-						<div class="shadow-default mb-5 rounded-md p-3 xs:p-7 bg-white">
-							<salla-loyalty customer-points='{{ user.loyalty_points }}' prize-points='{{ loyalty.prize.points }}' prize-title='{{ loyalty.prize.title }}'></salla-loyalty>
-						</div>
-					{% endif %}
 
-					<div class="shadow-default bg-white p-5 xs:p-7 rounded-md mb-5 relative transition-height duration-1000">
-						<h4 class="font-bold text-sm mb-5">{{ trans('pages.cart.summary') }}</h4>
-
-						<div class="flex justify-between text-sm mb-5">
-							<span class="text-gray-400">{{ trans("pages.cart.items_total") }}</span>
-							<b id="sub-total">{{ cart.sub_total|money }}</b>
-						</div>
-
-						<div id="shipping-cost" class="flex justify-between text-sm mb-5 {{ cart.has_shipping?'':'hidden' }}">
-							<span class="text-gray-400">{{ trans('pages.cart.shipping_cost') }}</span>
-							<b>{{ cart.real_shipping_cost|money }}</b>
-						</div>
-
-						{# todo :: use form #}
-						{% if store.settings.cart.apply_coupon_enabled %}
-							<div class="border-t border-gray-200 border-b py-5 mb-5">
-								<label for="coupon" class="block text-sm ">{{ trans('pages.cart.have_coupon') }}</label>
-								<div class="mt-2.5 relative">
-									<input placeholder="{{ trans('pages.cart.coupon_placeholder') }}" {{ cart.coupon ? 'disabled':'' }} class="rtl:pl-24 ltr:pr-24 form-input" value="{{ cart.coupon }}" id="coupon-input" name="coupon" type="text">
-
-									<salla-button class="btn--coupon {{ cart.coupon?'has-coupon btn--danger':'has-not-coupon btn--default' }}" loader-position="center" id="coupon-btn">
-										<span class="coupon-text">{{ trans('pages.cart.save_coupon') }}</span>
-										<i class="sicon-cancel icon text-xl w-8"></i>
-									</salla-button>
-								</div>
-								<span class="text-xs text-red-700" id="coupon-error"></span>
-							</div>
-						{% endif %}
-
-						<!-- coupon discount -->
-						<div id="total-discount" class="flex justify-between text-sm {{ cart.discount?'':'hidden' }}">
-							<span class="text-gray-400 block  h-10">{{ trans('pages.cart.discount') }}</span>
-							<b>-
-								{{ cart.real_discount|money }}</b>
-						</div>
-
-						<div class="flex justify-between text-lg mb-5">
-							<span class="text-gray-400">{{ trans('pages.cart.final_total') }}</span>
-							<b data-cart-total>{{ cart.total|money }}</b>
-						</div>
-
-						{% if store.settings.tax.taxable_prices_enabled %}
-							<div class="flex justify-between text-sm mb-5">
-								<small class="text-gray-400">
-									*
-									{{ trans('pages.cart.prices_taxed') }}
-								</small>
-							</div>
-						{% endif %}
-
-						<div class="cart-submit-wrap">
-							{% hook 'cart:submit.start' %}
-							<salla-button onclick="salla.cart.submit()" loader-position="center" width="wide">
-								{{ trans('pages.cart.complete_order') }}
-							</salla-button>
-							{% hook 'cart:submit.end' %}
-						</div>
-						{% hook 'cart:summary.end' %}
-					</div>
-				</div>
-			{% endif %}
 		</div>
 	</div>
 {% endblock %}

@@ -798,6 +798,12 @@ height: 354px ;
   .decrement {
       font-size: 12px !important;
   }
+  .buyingList{
+    display: none;
+  }
+  .cartFooter {
+    display: none !important;
+}
 }
 @media only screen and (min-width: 550px) {
   .header {
@@ -883,7 +889,7 @@ height: 354px ;
         display: none;
     }
     .cartFooter {
-        display: flex;
+        display: flex !important;
     }
     .card-bottom {
         margin-right: 0px;
