@@ -6628,9 +6628,11 @@ input {
     height: 350px;
   }
   .card {
+    margin-left: 20px !important;
+  }
+  .card {
     width: 165px;
     height: 350px;
-    margin: 20px;
   }
   .cartHome {
     width: 47px;
