@@ -140,7 +140,6 @@ input {
 //     width: 50%;
 // }
 .shopping-cart-icon {
-  width: 50%;
   height: 80%;
   background-color: #efecec;
   display: flex;
@@ -338,133 +337,134 @@ input {
   height: 432px;
 }
 .perfumPrice {
-    color: #f282a9;
-    font-size: 22px;
-    font-weight: bold;
+  color: #f282a9;
+  font-size: 22px;
+  font-weight: bold;
 }
 .perfumDiscount {
-    color: #f282a9;
-    font-size: 22px;
-    text-decoration: line-through;
-    opacity: 45%;
+  color: #f282a9;
+  font-size: 22px;
+  text-decoration: line-through;
+  opacity: 45%;
 }
 .nav-tabs a {
-    font-size: 19px;
-    color: #292929;
-    text-decoration: none;
-    font-weight: bold;
+  font-size: 19px;
+  color: #292929;
+  text-decoration: none;
+  font-weight: bold;
 }
 .nav-tabs li .active {
-    color: #919191;
-    border-bottom: 1px #f282a9 solid;
-    padding: 4px;
-    font-weight: bold;
+  color: #919191;
+  border-bottom: 1px #f282a9 solid;
+  padding: 4px;
+  font-weight: bold;
 }
 .infoData {
-    font-size: 16px;
-    color: #707070;
+  font-size: 16px;
+  color: #707070;
 }
 #perfumContainer {
-    text-align: right;
+  text-align: right;
 }
 .perfumaddToCart {
-    background-color: #f282a9;
-    color: white;
-    border-radius: 25px;
+  background-color: #f282a9;
+  color: white;
+  border-radius: 25px;
 }
 .perfumaddToFav {
-    color: #f282a9 !important;
-    border-radius: 25px !important;
-    border: 1px #f282a9 solid !important;
+  color: #f282a9 !important;
+  border-radius: 25px !important;
+  border: 1px #f282a9 solid !important;
 }
 .addToFav:hover {
-    color: #f282a9;
+  color: #f282a9;
 }
 .gallary img {
-    width: 80%;
+  width: 80%;
 }
 
 .gallaryImage {
-    margin: 10px;
-    margin-right: 50px;
-    box-shadow: 0px 3px 6px #0000003c;
-    border-radius: 13px;
-    justify-content: center;
-    display: flex !important;
-    height: 91px !important;
-    width: 77px !important;
+  margin: 10px;
+  margin-right: 50px;
+  box-shadow: 0px 3px 6px #0000003c;
+  border-radius: 13px;
+  justify-content: center;
+  display: flex !important;
+  height: 91px !important;
+  width: 77px !important;
 }
 #counter-value {
-    border: none;
-    /* border-radius: 20px; */
-    /* width: 28%; */
-    font-weight: bold;
+  border: none;
+  /* border-radius: 20px; */
+  /* width: 28%; */
+  font-weight: bold;
 }
 #counter-increment,
 #counter-decrement {
-    font-size: 28px;
-    color: #9fa3a7;
-    font-weight: bold;
+  font-size: 28px;
+  color: #9fa3a7;
+  font-weight: bold;
 }
 .quantity-counter {
-    border: 2px solid #eeeeee;
-    border-radius: 20px;
-    /* width: 50%; */
-    display: flex;
-    width: 80px;
-height: 33px;
-justify-content: space-between;
-align-items: center;
-/* padding: 30px; */
+  border: 2px solid #eeeeee;
+  border-radius: 20px;
+  /* width: 50%; */
+  display: flex;
+  width: 80px;
+  height: 33px;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 30px; */
 }
-#decrement,#increment{
-    cursor: pointer;
+#decrement,
+#increment {
+  cursor: pointer;
 }
 .reviweeImage img {
-    width: 80%;
-    /* border-radius: 50%; */
+  width: 80%;
+  /* border-radius: 50%; */
 }
 .comment {
-    padding: 20px;
-    background-color: #f0f0f0;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
 .reviewText {
-    color: #4c4c4c;
-    font-size: 18px;
+  color: #4c4c4c;
+  font-size: 18px;
 }
 .secondReviweeImage {
-    width: 10%;
+  width: 10%;
 }
 .reviewForm textarea {
-    background-color: #f0f0f0;
-    border: none;
+  background-color: #f0f0f0;
+  border: none;
 }
 .send {
-    background-color: #f282a9;
-    color: white;
-    border-radius: 25px;
-    width: 152px;
+  background-color: #f282a9;
+  color: white;
+  border-radius: 25px;
+  width: 152px;
 }
 .comments {
-    display: none;
+  display: none;
 }
 .addCommentForm {
-    display: none;
+  display: none;
 }
-.perfumImage{
-  width: 263px ;
-height: 354px ;
+.perfumImage {
+  width: 263px;
+  height: 354px;
 }
-.perfumImage img{
+.perfumImage img {
   width: 100%;
 }
-.s-button-primary{
+.s-button-primary {
   background-color: #f282a9;
   color: white;
   border-radius: 25px;
   border-color: #f282a9;
 }
-.s-button-primary:hover{
+.s-button-primary:hover {
   background-color: #f282a9;
 }
 .commentSend {
@@ -527,7 +527,7 @@ height: 354px ;
   max-width: 100%;
   width: 350px;
   justify-content: space-between;
-  margin-right: 4px;
+  margin-right: 4px !important;
   color: #9fa3a7;
   font-size: 12px;
 }
@@ -642,6 +642,32 @@ height: 354px ;
   font-weight: bold;
   font-size: 14px;
 }
+.s-cart-summary-total {
+  display: none;
+}
+[dir="rtl"] .s-cart-summary-count {
+  top: -19px;
+  right: -1.375rem;
+}
+.search {
+  margin-left: 20px !important;
+}
+.s-search-icon-wrap {
+  background-color: #bbbbbb;
+  color: white;
+  display: flex;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-size: 10px;
+  margin-right: -14px;
+}
+.s-search-icon svg{
+  fill: white;
+}
 @media only screen and (min-width: 375px) {
   .modalToggleResponsive {
     border-top: 3px solid #0a0a0a;
@@ -709,29 +735,30 @@ height: 354px ;
   }
   .card {
     width: 165px;
-    height: 290px;
+    height: 350px;
+    margin: 20px;
   }
   .cartHome {
     width: 47px;
     height: 30px;
   }
-   .card-bottom {
-        margin-right: 0px;
-        margin-left: 0px;
-        margin-bottom: -5px;
-    }
-    .perfumContainer {
-      flex-flow: column;
+  .card-bottom {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: -5px;
+  }
+  .perfumContainer {
+    flex-flow: column;
   }
   .image {
-      order: 1;
+    order: 1;
   }
   .info {
-      order: 2;
+    order: 2;
   }
   #cart-fav,
   #quantityContainer {
-      display: none;
+    display: none;
   }
   /* .image{
       position: relative;
@@ -742,68 +769,86 @@ height: 354px ;
       height: 44px;
   } */
   .card-bottom {
-      margin-right: 0px;
-      margin-left: 0px;
-      margin-bottom: -5px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: -5px;
   }
   .first {
-      margin-left: 6px;
+    margin-left: 6px;
   }
   .gallary {
-      margin-right: -60px;
+    margin-right: -60px;
   }
   #reviews .infoData {
-      display: none;
+    display: none;
   }
   .reviweeImage img {
-      width: 36px;
-      height: 39px;
+    width: 36px;
+    height: 39px;
   }
   .responsiveCard {
-      /* border: 1px #292929 solid; */
-      /* border-radius: 20px; */
-      box-shadow: 0px 8px 15px #e7eaf0;
-      border-radius: 7px;
-      width: 347px;
-      height: 110px;
-      margin-bottom: 50px;
+    /* border: 1px #292929 solid; */
+    /* border-radius: 20px; */
+    box-shadow: 0px 8px 15px #e7eaf0;
+    border-radius: 7px;
+    width: 347px;
+    height: 110px;
+    margin-bottom: 50px;
   }
   .responsiveCard .cardHeader {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 1px #e7eaf0 solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px #e7eaf0 solid;
   }
   .responsiveCard .cardFooter {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
   }
-.quantityResponsive {
-      justify-content: space-evenly;
-      align-items: center;
-      background: #f6f7f8;
-      border-radius: 4px;
+  .quantityResponsive {
+    justify-content: space-evenly;
+    align-items: center;
+    background: #f6f7f8;
+    border-radius: 4px;
   }
   .ProdImage {
-      width: 87px;
-      height: 87px;
+    width: 87px;
+    height: 87px;
   }
   .ProdImage img {
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    height: 100%;
   }
   .increment,
   .value,
   .decrement {
-      font-size: 12px !important;
+    font-size: 12px !important;
   }
-  .buyingList{
+  .buyingList {
     display: none;
   }
   .cartFooter {
     display: none !important;
-}
+  }
+  .shopping-cart-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .footerResponsive {
+    background: #e7e7e7 0% 0% no-repeat padding-box;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 365px;
+    height: 150px;
+    button {
+      width: 330px;
+      height: 50px;
+      margin-bottom: 5px;
+    }
+  }
 }
 @media only screen and (min-width: 550px) {
   .header {
@@ -847,54 +892,60 @@ height: 354px ;
     }
   }
   .card-bottom {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-bottom: 0px;
+  }
+  .perfumContainer {
+    flex-flow: row;
+  }
+  .image {
+    order: 2;
+  }
+  .info {
+    order: 1;
+  }
+  .responsiveDesign {
+    display: none;
+  }
+  #cart-fav,
+  #quantityContainer {
+    display: flex;
+  }
+  #reviews .infoData {
+    display: block;
+  }
+  .responsiveCard {
+    display: none;
+  }
+  .buyingList {
+    display: table;
+  }
+  .cartButtons {
+    display: block;
+  }
+  .responsiveCartButtons {
+    display: none;
+  }
+  .cartPaymentMethod {
+    justify-content: center;
+  }
+  .cartFooterResponsive {
+    display: none;
+  }
+  .cartFooter {
+    display: flex !important;
+  }
+  .card-bottom {
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 0px;
+  }
+  .shopping-cart-icon {
+    width: 100%;
+  }
+  .first {
+    margin-left: 50px;
+    margin-bottom: -4px;
 }
- .perfumContainer {
-        flex-flow: row;
-    }
-    .image {
-        order: 2;
-    }
-    .info {
-        order: 1;
-    }
-    .responsiveDesign {
-        display: none;
-    }
-    #cart-fav,
-    #quantityContainer {
-        display: flex;
-    }
-    #reviews .infoData {
-        display: block;
-    }
-    .responsiveCard {
-        display: none;
-    }
-    .buyingList {
-        display: block;
-    }
-    .cartButtons {
-        display: block;
-    }
-    .responsiveCartButtons {
-        display: none;
-    }
-    .cartPaymentMethod {
-        justify-content: center;
-    }
-    .cartFooterResponsive {
-        display: none;
-    }
-    .cartFooter {
-        display: flex !important;
-    }
-    .card-bottom {
-        margin-right: 0px;
-        margin-left: 0px;
-        margin-bottom: 0px;
-    }
 }
-

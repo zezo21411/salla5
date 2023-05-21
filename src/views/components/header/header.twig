@@ -9,8 +9,7 @@
 	{# Top Nav #}
 
 	{# Main Nav #}
-		<div id="mainnav" class="main-nav-container shadow-default bg-white header">
-		 <div class="row" style="    align-items: end;">
+		<div id="mainnav" class="main-nav-container shadow-default bg-white header"> <div class="row" style="justify-content: space-between;    align-items: end;">
 			<div class="logo col-6">
 				<div class="row">
 					<p style="margin-left:10px" id="modal" class="">
@@ -26,23 +25,25 @@
 				</div>
 
 			</div>
-			<div class="search col-3">
-				<salla-search inline="true" height="50"></salla-search>
+			<div class="search col-3" style="">
+				<salla-search inline="true" height=""></salla-search>
 
 			</div>
 			<div
-				class="col-3">
+				class="">
 				{# <a href="{{url("/cart")}}" style="text-decoration:none">
-									<div
-										class="shopping-cart-icon">
-										<i class="fa-solid fa-cart-shopping shopping-cart"></i>
-										<span class="button__badge">4</span>
-				
-									</div>
-								</a> #}
-				<salla-cart-summary>
-					<i slot="icon" class="fa-solid fa-cart-shopping shopping-cart"></i>
-				</salla-cart-summary>
+																	<div
+																		class="shopping-cart-icon">
+																		<i class="fa-solid fa-cart-shopping shopping-cart"></i>
+																		<span class="button__badge">4</span>
+												
+																	</div>
+																</a> #}
+				<div class="shopping-cart-icon">
+					<salla-cart-summary>
+						<i slot="icon" class="fa-solid fa-cart-shopping shopping-cart"></i>
+					</salla-cart-summary>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -69,10 +70,14 @@
 				</p>
 			</div>
 			<div style="display:flex; align-items: center;">
-				<a href="{{url("/")}}"><img src="{{asset("/images/logo.png")}}"></a>
-				<salla-cart-summary>
-					<div class="shopping-cart-icon"	><i slot="icon" class="fa-solid fa-cart-shopping shopping-cart"></i></div>
-				</salla-cart-summary>
+				<a href="{{url("/")}}" class="ml-2"><img src="{{asset("/images/logo.png")}}"></a>
+				<div class="shopping-cart-icon">
+					<salla-cart-summary>
+						<div class="shopping-cart-icon">
+							<i slot="icon" class="fa-solid fa-cart-shopping shopping-cart"></i>
+						</div>
+					</salla-cart-summary>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -268,6 +268,7 @@ $(document).ready(function () {
       $(".comments").hide();
       $(".addCommentForm").hide();
   });
+  $(".s-cart-summary-count").parent().next('.s-cart-summary-count').slideDown(100);
   if (window.location.href.indexOf("cart") > -1||window.location.href.indexOf("perfum") > -1 ) {
       var counterValue = $(" #value");
       var counterIncrement = $(" #increment");

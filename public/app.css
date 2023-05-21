@@ -6027,7 +6027,6 @@ input {
   margin-right: 20px;
 }
 .shopping-cart-icon {
-  width: 50%;
   height: 80%;
   background-color: #efecec;
   display: flex;
@@ -6306,7 +6305,8 @@ input {
   align-items: center;
   /* padding: 30px; */
 }
-#decrement, #increment {
+#decrement,
+#increment {
   cursor: pointer;
 }
 .reviweeImage img {
@@ -6410,10 +6410,12 @@ input {
   text-align: right;
 }
 .progressText {
+  margin-right: 4px !important;
+}
+.progressText {
   max-width: 100%;
   width: 350px;
   justify-content: space-between;
-  margin-right: 4px;
   color: #9fa3a7;
   font-size: 12px;
 }
@@ -6530,6 +6532,32 @@ input {
   font-weight: bold;
   font-size: 14px;
 }
+.s-cart-summary-total {
+  display: none;
+}
+[dir=rtl] .s-cart-summary-count {
+  top: -19px;
+  right: -1.375rem;
+}
+.search {
+  margin-left: 20px !important;
+}
+.s-search-icon-wrap {
+  background-color: #bbbbbb;
+  color: white;
+  display: flex;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-size: 10px;
+  margin-right: -14px;
+}
+.s-search-icon svg {
+  fill: white;
+}
 @media only screen and (min-width: 375px) {
   .modalToggleResponsive {
     border-top: 3px solid #0a0a0a;
@@ -6601,7 +6629,8 @@ input {
   }
   .card {
     width: 165px;
-    height: 290px;
+    height: 350px;
+    margin: 20px;
   }
   .cartHome {
     width: 47px;
@@ -6696,6 +6725,24 @@ input {
   .cartFooter {
     display: none !important;
   }
+  .shopping-cart-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .footerResponsive {
+    background: #e7e7e7 0% 0% no-repeat padding-box;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 365px;
+    height: 150px;
+  }
+  .footerResponsive button {
+    width: 330px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
 }
 @media only screen and (min-width: 550px) {
   .header {
@@ -6741,8 +6788,10 @@ input {
     width: 100%;
   }
   .card-bottom {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+  .card-bottom {
     margin-bottom: 0px;
   }
   .perfumContainer {
@@ -6768,7 +6817,7 @@ input {
     display: none;
   }
   .buyingList {
-    display: block;
+    display: table;
   }
   .cartButtons {
     display: block;
@@ -6789,6 +6838,13 @@ input {
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 0px;
+  }
+  .shopping-cart-icon {
+    width: 100%;
+  }
+  .first {
+    margin-left: 50px;
+    margin-bottom: -4px;
   }
 }
 .first\:rounded-t-md:first-child{border-top-left-radius:0.375rem;border-top-right-radius:0.375rem}
